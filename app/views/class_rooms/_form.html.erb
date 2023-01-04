@@ -1,0 +1,27 @@
+<%= form_with(model: class_room) do |form| %>
+  <% if class_room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(class_room.errors.count, "error") %> prohibited this class_room from being saved:</h2>
+
+      <ul>
+        <% class_room.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :class_number %>
+    <%= form.text_field :class_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stream %>
+    <%= form.text_field :stream %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
